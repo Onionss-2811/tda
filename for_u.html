@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for u 🤍</title>
+    <link
+        href="https://www.jqueryscript.net/demo/Simple-Falling-Snow-Effect-with-jQuery-CSS3-let-it-snow/let-it-snow.css"
+        rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script
+        src="https://www.jqueryscript.net/demo/Simple-Falling-Snow-Effect-with-jQuery-CSS3-let-it-snow/let-it-snow.min.js"></script>
+    <style>
+        @media screen and (max-width: 380px) {
+            .box {
+                top: 280px;
+                width: 200px;
+                height: 200px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                position: absolute;
+                margin-left: 7%;
+                margin-top: 0.5% !important;
+                margin-right: 35%;
+                -webkit-transform-style: preserve-3d;
+                -webkit-transform: rotateX(13deg);
+                -webkit-animation: move 5s linear infinite;
+            }
+        }
+
+        @media screen and (max-width: 420px) {
+            .box {
+                top: 280px;
+                width: 200px;
+                height: 200px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                position: absolute;
+                margin-left: 7%;
+                margin-top: 5%;
+                margin-right: 35%;
+                -webkit-transform-style: preserve-3d;
+                -webkit-transform: rotateX(13deg);
+                -webkit-animation: move 5s linear infinite;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            cursor: url(https://i.ibb.co/mz9rDX4/star.png), auto;
+        }
+
+        body {
+            max-width: 100%;
+            min-width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        .let-it-snow {
+            background: linear-gradient(-45deg, #E4AA99, #E594B3, #53B3D6, #67DABF, #E594B3, #E4AA99, #67DABF, #53B3D6);
+            animation: gradientBG 8s ease infinite;
+            width: 400%;
+            height: 400%;
+            background-size: cover;
+            background-repeat: repeat;
+            background-attachment: fixed;
+            background-size: 300% 300%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .box {
+            top: 280px;
+            width: 200px;
+            height: 200px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: absolute;
+            margin-left: 6%;
+            margin-right: 30%;
+            -webkit-transform-style: preserve-3d;
+            -webkit-transform: rotateX(13deg);
+            -webkit-animation: move 5s linear infinite;
+        }
+
+        .minbox {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 50px;
+            top: 30px;
+            -webkit-transform-style: preserve-3d;
+        }
+
+        .minbox li {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .minbox li:nth-child(1) {
+            -webkit-transform: translateZ(50px);
+        }
+
+        .minbox li:nth-child(2) {
+            -webkit-transform: rotateX(180deg) translateZ(50px);
+        }
+
+        .minbox li:nth-child(3) {
+            -webkit-transform: rotateX(-90deg) translateZ(50px);
+        }
+
+        .minbox li:nth-child(4) {
+            -webkit-transform: rotateX(90deg) translateZ(50px);
+        }
+
+        .minbox li:nth-child(5) {
+            -webkit-transform: rotateY(-90deg) translateZ(50px);
+        }
+
+        .minbox li:nth-child(6) {
+            -webkit-transform: rotateY(90deg) translateZ(50px);
+        }
+
+        .maxbox li:nth-child(1) {
+            background: url(./img/img_10.jpg);
+            background-size: 200px 200px;
+            -webkit-transform: translateZ(50px);
+        }
+
+        .maxbox li:nth-child(2) {
+            background: url(./img/img_2.jpg);
+            background-size: 200px 200px;
+            -webkit-transform: rotateX(180deg) translateZ(50px);
+        }
+
+        .maxbox li:nth-child(3) {
+            background: url(./img/img_8.jpg);
+            background-size: 200px 200px;
+            -webkit-transform: rotateX(-90deg) translateZ(50px);
+        }
+
+        .maxbox li:nth-child(4) {
+            background: url(./img/img_7.jpg);
+            background-size: 200px 200px;
+            -webkit-transform: rotateX(90deg) translateZ(50px);
+        }
+
+        .maxbox li:nth-child(5) {
+            background: url(./img/img_12.jpg);
+            background-size: 200px 200px;
+            -webkit-transform: rotateX(-90deg) translateZ(50px);
+        }
+
+        .maxbox li:nth-child(6) {
+            background: url(./img/img_3.jpg);
+            background-size: 200px 200px;
+            -webkit-transform: rotateX(90deg) translateZ(50px);
+        }
+
+        .maxbox {
+            width: 800px;
+            height: 400px;
+            position: absolute;
+            left: 0;
+            top: -20px;
+            -webkit-transform-style: preserve-3d;
+        }
+
+        .maxbox li {
+            width: 200px;
+            height: 200px;
+            background: #fff;
+            border: 1px solid #ccc;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0.3;
+            -webkit-transition: all 1.2s ease;
+        }
+
+        .maxbox li:nth-child(1) {
+            -webkit-transform: translateZ(100px);
+        }
+
+        .maxbox li:nth-child(2) {
+            -webkit-transform: rotateX(180deg) translateZ(100px);
+        }
+
+        .maxbox li:nth-child(3) {
+            -webkit-transform: rotateX(-90deg) translateZ(100px);
+        }
+
+        .maxbox li:nth-child(4) {
+            -webkit-transform: rotateX(90deg) translateZ(100px);
+        }
+
+        .maxbox li:nth-child(5) {
+            -webkit-transform: rotateY(-90deg) translateZ(100px);
+        }
+
+        .maxbox li:nth-child(6) {
+            -webkit-transform: rotateY(90deg) translateZ(100px);
+        }
+
+        .box:hover ol li:nth-child(1) {
+            -webkit-transform: translateZ(300px);
+            background-size: 400px 400px;
+            width: 400px;
+            height: 400px;
+            opacity: 0.8;
+            left: -100px;
+            top: -100px;
+        }
+
+        .box:hover ol li:nth-child(2) {
+            -webkit-transform: rotateX(180deg) translateZ(300px);
+            background-size: 400px 400px;
+            width: 400px;
+            height: 400px;
+            opacity: 0.5;
+            left: -100px;
+            top: -100px;
+        }
+
+        .box:hover ol li:nth-child(3) {
+            -webkit-transform: rotateX(-90deg) translateZ(300px);
+            background-size: 400px 400px;
+            width: 400px;
+            height: 400px;
+            opacity: 0.8;
+            left: -100px;
+            top: -100px;
+        }
+
+        .box:hover ol li:nth-child(4) {
+            -webkit-transform: rotateX(90deg) translateZ(300px);
+            background-size: 400px 400px;
+            width: 400px;
+            height: 400px;
+            opacity: 0.8;
+            left: -100px;
+            top: -100px;
+        }
+
+        .box:hover ol li:nth-child(5) {
+            -webkit-transform: rotateY(-90deg) translateZ(300px);
+            background-size: 400px 400px;
+            width: 400px;
+            height: 400px;
+            opacity: 0.8;
+            left: -100px;
+            top: -100px;
+        }
+
+        .box:hover ol li:nth-child(6) {
+            -webkit-transform: rotateY(90deg) translateZ(300px);
+            background-size: 400px 400px;
+            width: 400px;
+            height: 400px;
+            opacity: 0.8;
+            left: -100px;
+            top: -100px;
+        }
+
+        @keyframes move {
+            0% {
+                -webkit-transform: rotateX(13deg) rotateY(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotateX(13deg) rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <audio id="heartbeat" src="./audio.mp3" preload="auto"></audio>
+    <div class="let-it-snow">
+        <div id="box" class="box">
+            <ul class="minbox">
+                <li>
+                    <img src="./img/img_1.jpg" width="100px" height="100px" alt="">
+                </li>
+                <li>
+                    <img src="./img/img_11.jpg" width="100px" height="100px" alt="">
+                </li>
+                <li>
+                    <img src="./img/img_7.jpg" width="100px" height="100px" alt="">
+                </li>
+                <li>
+                    <img src="./img/img_10.jpg" width="100px" height="100px" alt="">
+                </li>
+                <li>
+                    <img src="./img/img_8.jpg" width="100px" height="100px" alt="">
+                </li>
+                <li>
+                    <img src="./img/img_6.jpg" width="100px" height="100px" alt="">
+                </li>
+            </ul>
+            <ol class="maxbox">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+    </div>
+    <div class="buttons">
+        <button id="play">Play 1</button>
+        <button id="reset">Play 2</button>
+    </div>
+</body>
+<script>
+    $.letItSnow('.let-it-snow', {
+        stickyFlakes: 'lis-flake--js',
+        makeFlakes: true,
+        sticky: true
+    });
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36251023-1']);
+    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    var box = document.getElementById('box'),
+        hearbeat = document.getElementById('heartbeat')
+    audios = document.querySelectorAll('audio');
+    console.log(audios);
+
+
+    box.addEventListener('mouseover', function () {
+        [].forEach.call(audios, function (audio) {
+            // do whatever
+            audio.play();
+        });
+    }, false);
+
+//     box.addEventListener('mouseleave', function () {
+//          heartbeat.pause();
+//          heartbeat.currentTime = 5;
+//     }, false);
+</script>
+
+</html>
